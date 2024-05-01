@@ -1,6 +1,6 @@
 #at least 1 pc and 1 npc
 #need hp, hit, attack, damage, ac, level, modifier
-    #user inptus can determine these
+    #user inputs can determine these
 class Player(name):
 
     def __init__(self):

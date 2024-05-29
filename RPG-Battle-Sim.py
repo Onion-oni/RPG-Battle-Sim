@@ -1,18 +1,24 @@
 #at least 1 pc and 1 npc
 #need hp, hit, attack, damage, ac, level, modifier
     #user inputs can determine these
-class Player(name):
+class Player():
 
     def __init__(self):
-#Eventually will have capability to validate user inputs as being integers
-        level = input ("What level is this character? (1-20): ")
-        hitpoints = input("How many hitpoints does this character have?: ")
-        armor = input("What is this character's armor class?: ")
 
-        self.level = int(level)
-        self.hitpoints = int(hitpoints)
-        self.armor = int(armor)
-        self.attack = 0
+        name = input ("What is this character's name? ")
+        
+        level = input ("What level is this character? (1-20): ")
+        lvl_range = range(1,20)
+        while level.isdigit() == False or int(level) not in lvl_range:
+            level = input ("Please enter a number between 1 and 20: ")            
+        
+        hitpoints = input("How many hitpoints does this character have?: ")
+        while hitpoints.isdigit() == False:
+            hitpoints = input("Please enter a number: ")
+        
+        armor = input("What is this character's armor class?: ")
+        while armor.isdigit() == False:
+            armor = input("Please enter a number: ")
         
 #turn order
     #rolling a d20 determines initiative but I will decide this while testing
